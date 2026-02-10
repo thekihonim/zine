@@ -1,0 +1,147 @@
+// =============================================
+// ZINE Button System
+// =============================================
+// 樣式：Filled / Outlined / Flat
+// 尺寸：S / 預設(M) / LG
+// 狀態：Default / Hover / Disabled / Selected
+// =============================================
+
+// ---------------------
+// 共用基礎
+// ---------------------
+.btn-zine {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: $font-size-base; // 16px (M_R)
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  .material-icons {
+    font-size: 1.25em;
+    line-height: 1;
+  }
+}
+
+// ---------------------
+// 尺寸
+// ---------------------
+.btn-zine-sm {
+  font-size: $font-size-sm; // 14px (S_R)
+  padding: 4px 8px;
+  gap: 0;
+
+  // S 尺寸不顯示 icon
+  .material-icons {
+    display: none;
+  }
+}
+
+.btn-zine-lg {
+  font-size: $font-size-xl; // 20px (xl_R)
+  padding: 16px 24px;
+  gap: 16px;
+}
+
+// =============================================
+// Filled 按鈕
+// =============================================
+.btn-zine-filled {
+  background-color: $primary-600;
+  color: $primary-000;
+  border: none;
+
+  &:hover {
+    background-color: $primary-100;
+    color: $primary-1000;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $gray-200;
+    color: $gray-000;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.selected,
+  &:active {
+    background-color: $primary-700;
+    color: $primary-000;
+  }
+}
+
+// =============================================
+// Outlined 按鈕
+// =============================================
+.btn-zine-outlined {
+  background-color: $gray-000;
+  color: $primary-1000;
+  border: 1px solid $primary-600;
+
+  &:hover {
+    background-color: $primary-100;
+    color: $primary-1000;
+    border-color: $primary-600;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $gray-200;
+    color: $gray-000;
+    border-color: $gray-400;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.selected,
+  &:active {
+    background-color: $primary-700;
+    color: $primary-000;
+    border-color: $primary-600;
+  }
+}
+
+// =============================================
+// Flat 按鈕
+// =============================================
+.btn-zine-flat {
+  background-color: transparent;
+  color: $primary-600;
+  border: none;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: $primary-100;
+    color: $primary-1000;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: transparent;
+    color: $gray-200;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &.selected,
+  &:active {
+    background-color: $primary-700;
+    color: $primary-000;
+  }
+}
+
+// Flat 尺寸覆寫
+.btn-zine-flat.btn-zine-sm {
+  padding: 4px 8px;
+}
+
+.btn-zine-flat.btn-zine-lg {
+  padding: 16px 24px;
+}

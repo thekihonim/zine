@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <div class="container py-5">
+      <h1 class="index-title mb-5">ZINE Button System</h1>
+
+      <!-- ===== Filled ===== -->
+      <h2 class="mb-3">Filled</h2>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-filled btn-zine-lg"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-filled">Label</button>
+        <button class="btn-zine btn-zine-filled btn-zine-sm">Label</button>
+      </div>
+      <p class="text-muted mb-1">With Icon</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-filled btn-zine-lg"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-filled"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-filled btn-zine-sm">Label</button>
+      </div>
+      <p class="text-muted mb-1">Disabled</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-filled btn-zine-lg" disabled><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-filled" disabled>Label</button>
+        <button class="btn-zine btn-zine-filled btn-zine-sm" disabled>Label</button>
+      </div>
+      <p class="text-muted mb-1">Selected</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+        <button class="btn-zine btn-zine-filled btn-zine-lg selected"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-filled selected">Label</button>
+        <button class="btn-zine btn-zine-filled btn-zine-sm selected">Label</button>
+      </div>
+
+      <hr class="my-4">
+
+      <!-- ===== Outlined ===== -->
+      <h2 class="mb-3">Outlined</h2>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-outlined btn-zine-lg"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-outlined">Label</button>
+        <button class="btn-zine btn-zine-outlined btn-zine-sm">Label</button>
+      </div>
+      <p class="text-muted mb-1">Disabled</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-outlined btn-zine-lg" disabled><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-outlined" disabled>Label</button>
+        <button class="btn-zine btn-zine-outlined btn-zine-sm" disabled>Label</button>
+      </div>
+      <p class="text-muted mb-1">Selected</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+        <button class="btn-zine btn-zine-outlined btn-zine-lg selected"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-outlined selected">Label</button>
+        <button class="btn-zine btn-zine-outlined btn-zine-sm selected">Label</button>
+      </div>
+
+      <hr class="my-4">
+
+      <!-- ===== Flat ===== -->
+      <h2 class="mb-3">Flat</h2>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-flat btn-zine-lg"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat btn-zine-sm">Label</button>
+      </div>
+      <p class="text-muted mb-1">Disabled</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-3">
+        <button class="btn-zine btn-zine-flat btn-zine-lg" disabled><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat" disabled><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat btn-zine-sm" disabled>Label</button>
+      </div>
+      <p class="text-muted mb-1">Selected</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+        <button class="btn-zine btn-zine-flat btn-zine-lg selected"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat selected"><span class="material-icons">search</span>Label</button>
+        <button class="btn-zine btn-zine-flat btn-zine-sm selected">Label</button>
+      </div>
+    </div>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
