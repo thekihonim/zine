@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,15 +7,46 @@
     <title>about</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include('./layout/header'); -%>
     <main>
       <div class="container">
         <section class="author-hero">
-          
+          <div class="author-profile">
+            <div class="avatar">
+              <img src="../assets/images/Ellipse 33.png" alt="沒事多看球" />
+            </div>
+
+            <div class="author-meta">
+              <h1 class="author-name">沒事多看球</h1>
+              <p class="author-followers">54 位訂閱者</p>
+            </div>
+
+            <div class="author-action">
+              <button class="btn btn-zine-lg btn-zine-filled" type="button">
+                訂閱
+              </button>
+            </div>
+          </div>
+
+          <div class="author-bio-box">
+            <p class="author-bio">
+              我是大衛，一名在產品𨗴輯裡打滾的PM，也是在看台上尋找真理的棒球徒。
+            </p>
+            <p class="author-bio">
+              在職涯中，我習慣拆解需求，優化流程；在球場上，我则迷戀於教練的調度運輯與球員的數據成長。「PM的隨手寫誌」是我將「產品思維」與「棒球熱愛」結合的實驗場。這裡不只聊輸贏，更聊賽事背後的策略布局與團隊協作。
+            </p>
+            <p class="author-bio">沒事多看球，讓思維在紅土上奔跑。X</p>
+          </div>
         </section>
       </div>
     </main>
