@@ -1,9 +1,12 @@
+// ==================================================
 // Author Hero
+// 作者頁首區塊：包含背景裝飾、作者資訊與個人簡介
+// ==================================================
 .author-hero {
   position: relative;
   overflow: hidden;
 
-  // 背景點點
+  // 背景裝飾層
   &::before {
     content: "";
     position: absolute;
@@ -13,40 +16,104 @@
     opacity: 0.2;
 
     z-index: 0;
+    pointer-events: none;
   }
 
-  // 內容層
+  // 主要內容層，需高於背景裝飾
   .container {
     position: relative;
     z-index: 1;
   }
 
-  // 作者頭像
-  .avatar {
-    margin-right: 40px;
+  .author-profile {
+    display: flex;
+    align-items: center;
   }
 
-  // 作者名稱
+  .avatar {
+    margin-right: 40px;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+
   .author-name {
     margin-bottom: 16px;
   }
 
-  // 訂閱按鈕
+  // 桌機版按鈕推到最右側
   .author-action {
     margin-left: auto;
   }
 
+  // 作者簡介卡片
   .author-bio-box {
-    background: $gray-50;
-    padding: 40px;
-    margin-top: 40px;
-
     display: flex;
     flex-direction: column;
     gap: 16px;
 
+    margin-top: 40px;
+    padding: 40px;
+    background: $gray-50;
+
+    // 由 gap 控制段落間距，移除預設 margin
     > * {
       margin: 0;
+    }
+
+    .author-bio {
+      font-size: $font-size-lg; // 18px (M_R)
+      font-weight: $font-weight-normal;
+    }
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// ==================================================
+// Mobile / Tablet
+// 767px 以下：作者資訊列改為垂直排列，並縮小留白與內距
+// ==================================================
+@media (max-width: 767px) {
+  .author-hero {
+    // 作者資訊列改為上下堆疊，並整體置中
+    .author-profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    // 手機版取消右側間距，改為下方留白
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
+    // 手機版按鈕不再推到最右側，改為置中並與上方資訊保留距離
+    .author-action {
+      margin-left: 0;
+      margin-top: 24px;
+
+      .btn-zine-lg {
+        padding: 8px 16px;
+        gap: 12px;
+      }
+    }
+
+    .author-bio-box {
+      padding: 24px;
+      margin-top: 24px;
+
+      .author-bio {
+        font-size: $font-size-base; // 16px (M_R)
+      }
     }
   }
 }
