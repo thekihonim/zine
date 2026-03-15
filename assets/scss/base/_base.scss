@@ -2,6 +2,12 @@ body {
   color: $gray-1000;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 p,
 h1,
 h2,

@@ -16,6 +16,7 @@
     opacity: 0.2;
 
     z-index: 0;
+    // Avoid blocking clicks on content
     pointer-events: none;
   }
 
