@@ -118,3 +118,87 @@
     }
   }
 }
+
+// ==================================================
+// Author Posts
+// 作者文章列表區塊
+// ==================================================
+.author-posts {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  // 分類標籤區
+  .author-posts-category {
+    margin-bottom: 40px;
+
+    .post-category-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background: $gray-600;
+      color: $gray-000;
+      font-size: $font-size-base; // 16px (l_B)
+      border-radius: 4px;
+    }
+  }
+
+  // 文章卡片 grid
+  .author-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  // ------------------------------------------------
+  // Post Card
+  // ------------------------------------------------
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $gray-1000;
+
+    .post-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .post-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 8px;
+
+      padding: 24px;
+
+      .post-card-title {
+        font-size: $font-size-lg; // 18px (M_R)
+        font-weight: $font-weight-bold;
+      }
+
+      .post-card-excerpt {
+        font-size: $font-size-base; // 16px (M_R)
+        font-weight: $font-weight-normal;
+        color: $gray-1000;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+      }
+
+      .post-card-date {
+        margin-top: auto;
+        font-size: $font-size-sm; // 14px (S_R)
+        color: $gray-600;
+      }
+    }
+  }
+
+  // 查看更多按鈕區
+  .author-posts-more {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+}
