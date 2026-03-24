@@ -202,3 +202,30 @@
     justify-content: center;
   }
 }
+
+// ==================================================
+// Mobile / Tablet
+// 767px 以下：調整作者文章列表區塊的內距與卡片間距
+// ==================================================
+@media (max-width: 767px) {
+  .author-posts {
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    .author-posts-category {
+      margin-bottom: 40px;
+    }
+
+    .author-posts-grid {
+      gap: 24px;
+    }
+
+    .author-posts-more {
+      margin-top: 40px;
+    }
+  }
+
+  .btn-zine-lg {
+    padding: 8px 16px;
+  }
+}
