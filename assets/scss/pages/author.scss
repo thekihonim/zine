@@ -1,5 +1,231 @@
-.author-hero{
-    background-image: url('../../images/image\ 126.png');
-    background-size: cover;
-    background-position: center;
+// ==================================================
+// Author Hero
+// 作者頁首區塊：包含背景裝飾、作者資訊與個人簡介
+// ==================================================
+.author-hero {
+  position: relative;
+  overflow: hidden;
+
+  // 背景裝飾層
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: url("/zine/assets/images/dots.png") repeat;
+    opacity: 0.2;
+
+    z-index: 0;
+    // Avoid blocking clicks on content
+    pointer-events: none;
+  }
+
+  // 主要內容層，需高於背景裝飾
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .author-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    margin-right: 40px;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+
+  .author-name {
+    margin-bottom: 16px;
+  }
+
+  // 桌機版按鈕推到最右側
+  .author-action {
+    margin-left: auto;
+  }
+
+  // 作者簡介卡片
+  .author-bio-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: 40px;
+    padding: 40px;
+    background: $gray-50;
+
+    // 由 gap 控制段落間距，移除預設 margin
+    > * {
+      margin: 0;
+    }
+
+    .author-bio {
+      font-size: $font-size-lg; // 18px (M_R)
+      font-weight: $font-weight-normal;
+    }
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// ==================================================
+// Mobile / Tablet
+// 767px 以下：作者資訊列改為垂直排列，並縮小留白與內距
+// ==================================================
+@media (max-width: 767px) {
+  .author-hero {
+    // 作者資訊列改為上下堆疊，並整體置中
+    .author-profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    // 手機版取消右側間距，改為下方留白
+    .avatar {
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
+    // 手機版按鈕不再推到最右側，改為置中並與上方資訊保留距離
+    .author-action {
+      margin-left: 0;
+      margin-top: 24px;
+
+      .btn-zine-lg {
+        padding: 8px 16px;
+        gap: 12px;
+      }
+    }
+
+    .author-bio-box {
+      padding: 24px;
+      margin-top: 24px;
+
+      .author-bio {
+        font-size: $font-size-base; // 16px (M_R)
+      }
+    }
+  }
+}
+
+// ==================================================
+// Author Posts
+// 作者文章列表區塊
+// ==================================================
+.author-posts {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  // 分類標籤區
+  .author-posts-category {
+    margin-bottom: 40px;
+
+    .post-category-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background: $gray-600;
+      color: $gray-000;
+      font-size: $font-size-base; // 16px (l_B)
+      border-radius: 4px;
+    }
+  }
+
+  // 文章卡片 grid
+  .author-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+  }
+
+  // ------------------------------------------------
+  // Post Card
+  // ------------------------------------------------
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $gray-1000;
+
+    .post-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .post-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 8px;
+
+      padding: 24px;
+
+      .post-card-title {
+        font-size: $font-size-lg; // 18px (M_R)
+        font-weight: $font-weight-bold;
+      }
+
+      .post-card-excerpt {
+        font-size: $font-size-base; // 16px (M_R)
+        font-weight: $font-weight-normal;
+        color: $gray-1000;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+      }
+
+      .post-card-date {
+        margin-top: auto;
+        font-size: $font-size-sm; // 14px (S_R)
+        color: $gray-600;
+      }
+    }
+  }
+
+  // 查看更多按鈕區
+  .author-posts-more {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// ==================================================
+// Mobile / Tablet
+// 767px 以下：調整作者文章列表區塊的內距與卡片間距
+// ==================================================
+@media (max-width: 767px) {
+  .author-posts {
+    padding-top: 40px;
+    padding-bottom: 80px;
+
+    .author-posts-category {
+      margin-bottom: 40px;
+    }
+
+    .author-posts-grid {
+      gap: 24px;
+    }
+
+    .author-posts-more {
+      margin-top: 40px;
+    }
+  }
+
+  .btn-zine-lg {
+    padding: 8px 16px;
+  }
 }
